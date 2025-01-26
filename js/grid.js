@@ -1,3 +1,16 @@
+// grid.js
+
+function addRandomTile() {
+  if (this.cellsAvailable()) {
+    // Force the rainbow cupcake (2048 value) to spawn
+    var value = 2048; 
+    var tile = new Tile(this.randomAvailableCell(), value);
+    this.insertTile(tile);
+  }
+}
+
+// Ensure this function replaces the existing addRandomTile logic in your grid.js file.
+// Reload the game after saving the file to see the rainbow cupcake appear!
 function Grid(size, previousState) {
   this.size = size;
   this.cells = previousState ? this.fromState(previousState) : this.empty();
